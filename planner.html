@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RecipeBox — учебное веб-приложение (HTML/CSS/JS) с API, асинхронностью и LocalStorage.">
+  <title>RecipeBox — План питания</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="RecipeBox — на главную">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>RecipeBox</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a class="nav-link" href="index.html">Главная</a></li>
+          <li><a class="nav-link" href="search.html">Поиск</a></li>
+          <li><a class="nav-link" href="categories.html">Категории</a></li>
+          <li><a class="nav-link" href="favorites.html">Избранное</a></li>
+          <li><a class="nav-link" href="planner.html">План</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" tabindex="-1">
+    <h1>План питания на неделю</h1>
+
+    <div id="loading" class="loading hidden" role="status" aria-live="polite">Загрузка…</div>
+    <div id="error" class="error hidden" role="alert"></div>
+
+    
+<section class="card section">
+  <h2>Добавить блюдо в план</h2>
+  <form id="addPlanForm" novalidate>
+    <div class="field">
+      <label for="day">День недели</label>
+      <select id="day" required></select>
+    </div>
+
+    <div class="field">
+      <label for="mealSelect">Блюдо</label>
+      <select id="mealSelect" required></select>
+      <div class="small">Список берётся из «Избранного». Это помогает быстро демонстрировать LocalStorage → UI.</div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Добавить</button>
+  </form>
+</section>
+
+<section class="card section" style="margin-top:16px;">
+  <h2>План на неделю</h2>
+  <p class="small">План хранится в LocalStorage как объект «день → список блюд».</p>
+  <div id="plannerGrid" class="grid" style="grid-template-columns: repeat(1, 1fr); gap:16px;"></div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>RecipeBox © Учебный проект</span>
+      <span class="small">Данные рецептов: TheMealDB</span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/pages/planner.js"></script>
+</body>
+</html>

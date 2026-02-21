@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RecipeBox — учебное веб-приложение (HTML/CSS/JS) с API, асинхронностью и LocalStorage.">
+  <title>RecipeBox — Избранное</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="RecipeBox — на главную">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>RecipeBox</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a class="nav-link" href="index.html">Главная</a></li>
+          <li><a class="nav-link" href="search.html">Поиск</a></li>
+          <li><a class="nav-link" href="categories.html">Категории</a></li>
+          <li><a class="nav-link" href="favorites.html">Избранное</a></li>
+          <li><a class="nav-link" href="planner.html">План</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" tabindex="-1">
+    <h1>Избранные рецепты</h1>
+
+    <div id="loading" class="loading hidden" role="status" aria-live="polite">Загрузка…</div>
+    <div id="error" class="error hidden" role="alert"></div>
+
+    
+<section class="card section">
+  <h2>Мои сохранённые рецепты</h2>
+  <p class="small">Данные списка хранятся в LocalStorage (массив id). Для отображения карточек подгружаем детали по id из API.</p>
+  <div id="favList" class="cards"></div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>RecipeBox © Учебный проект</span>
+      <span class="small">Данные рецептов: TheMealDB</span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/pages/favorites.js"></script>
+</body>
+</html>

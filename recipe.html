@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RecipeBox — учебное веб-приложение (HTML/CSS/JS) с API, асинхронностью и LocalStorage.">
+  <title>RecipeBox — Рецепт</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="RecipeBox — на главную">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>RecipeBox</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a class="nav-link" href="index.html">Главная</a></li>
+          <li><a class="nav-link" href="search.html">Поиск</a></li>
+          <li><a class="nav-link" href="categories.html">Категории</a></li>
+          <li><a class="nav-link" href="favorites.html">Избранное</a></li>
+          <li><a class="nav-link" href="planner.html">План</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" tabindex="-1">
+    <h1>Детали рецепта</h1>
+
+    <div id="loading" class="loading hidden" role="status" aria-live="polite">Загрузка…</div>
+    <div id="error" class="error hidden" role="alert"></div>
+
+    
+<section class="card section">
+  <div id="recipeHeader" class="grid grid-2" style="align-items:start;"></div>
+</section>
+
+<section class="card section" style="margin-top:16px;">
+  <h2>Ингредиенты</h2>
+  <ul id="ingredients"></ul>
+</section>
+
+<section class="card section" style="margin-top:16px;">
+  <h2>Инструкция</h2>
+  <p id="instructions"></p>
+</section>
+
+<!-- Модальное окно для выбора дня (ещё один JS-сценарий) -->
+<div id="planModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="planTitle">
+  <div class="modal">
+    <div class="section modal-header">
+      <h3 id="planTitle" class="modal-title">Добавить в план</h3>
+      <button id="closeModal" class="btn btn-ghost" type="button" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="section">
+      <form id="planForm">
+        <div class="field">
+          <label for="daySelect">День недели</label>
+          <select id="daySelect" required></select>
+        </div>
+        <button class="btn btn-primary" type="submit">Добавить</button>
+        <button id="cancelBtn" class="btn" type="button">Отмена</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>RecipeBox © Учебный проект</span>
+      <span class="small">Данные рецептов: TheMealDB</span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/pages/recipe.js"></script>
+</body>
+</html>

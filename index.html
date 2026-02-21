@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RecipeBox — учебное веб-приложение (HTML/CSS/JS) с API, асинхронностью и LocalStorage.">
+  <title>RecipeBox — Главная</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="RecipeBox — на главную">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>RecipeBox</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a class="nav-link" href="index.html">Главная</a></li>
+          <li><a class="nav-link" href="search.html">Поиск</a></li>
+          <li><a class="nav-link" href="categories.html">Категории</a></li>
+          <li><a class="nav-link" href="favorites.html">Избранное</a></li>
+          <li><a class="nav-link" href="planner.html">План</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" tabindex="-1">
+    <h1>RecipeBox — книга рецептов</h1>
+
+    <div id="loading" class="loading hidden" role="status" aria-live="polite">Загрузка…</div>
+    <div id="error" class="error hidden" role="alert"></div>
+
+    
+<section class="grid grid-2">
+  <div class="card section">
+    <h2>Рецепт дня</h2>
+    <p>Пример работы с API: запрос <span class="badge">random.php</span>, состояния загрузки/ошибок, кнопки «в избранное» и «в план».</p>
+    <div id="randomMeal"></div>
+  </div>
+
+  <aside class="card section">
+    <h2>Быстрые действия</h2>
+    <p>Самый удобный сценарий для защиты: найти рецепт → открыть → сохранить → посмотреть в избранном/плане.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="search.html">🔎 Поиск рецептов</a>
+      <a class="btn" href="favorites.html">❤️ Избранное</a>
+      <a class="btn" href="planner.html">📅 План питания</a>
+    </div>
+
+    <div class="hr"></div>
+
+    <h2>Категории</h2>
+    <p class="small">Список категорий загружается из API и ведёт на страницу фильтрации.</p>
+    <div id="categoryChips" class="actions"></div>
+  </aside>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>RecipeBox © Учебный проект</span>
+      <span class="small">Данные рецептов: TheMealDB</span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/pages/index.js"></script>
+</body>
+</html>
