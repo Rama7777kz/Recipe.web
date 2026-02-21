@@ -27,8 +27,7 @@ RecipeBox — небольшое веб‑приложение «Книга ре
 - Добавление/удаление из избранного (LocalStorage)
 - Добавление в план питания (LocalStorage) + модальное окно выбора дня
 - Состояния: загрузка (Loading…) и обработка ошибок (try/catch)
-
-  ##Скриншоты проекта
+##Скриншоты проекта
   <img width="1902" height="890" alt="image" src="https://github.com/user-attachments/assets/b442a641-f972-4dcd-a64a-f59bb3ab4241" />
   <img width="1791" height="897" alt="image" src="https://github.com/user-attachments/assets/5dcd1691-cd2f-4db2-81d9-f44e9bf4a731" />
   <img width="1920" height="795" alt="image" src="https://github.com/user-attachments/assets/23410757-b91a-4ae2-80cf-294b00d27b4e" />
