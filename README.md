@@ -20,7 +20,7 @@ RecipeBox — небольшое веб‑приложение «Книга ре
 5. `favorites.html` — избранное (LocalStorage + подгрузка карточек по id)
 6. `planner.html` — план питания на неделю (LocalStorage)
 
-## Функции (что можно показать на защите)
+## Функции 
 - Поиск рецептов по названию (форма + валидация + API)
 - Фильтрация рецептов по категории (API)
 - Открытие карточки рецепта по `?id=...` (API)
@@ -42,7 +42,7 @@ https://www.themealdb.com/api.php
 ## Запуск проекта
 Важно: из‑за модулей ES (`type="module"`) проект нужно открывать через локальный сервер, а не двойным кликом по файлу.
 
-### Вариант A (самый простой) — VS Code Live Server
+### Вариант A — VS Code Live Server
 1) Открой папку проекта в VS Code  
 2) Поставь расширение **Live Server**  
 3) ПКМ по `index.html` → **Open with Live Server**
@@ -55,10 +55,10 @@ npx http-server .
 Открой адрес, который покажет терминал (обычно `http://localhost:8080`).
 
 ## Автор
-- Имя: (впиши своё)
-- Группа/курс: (впиши)
+- Имя и фамилия:Ауэзов Рамиль
+- Группа: Sat14e-231/2P
 
-## Полезные ссылки (для пояснений на защите)
+## Полезные ссылки 
 - Fetch API (MDN): https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 - Web Storage API (MDN): https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 - git commit (git-scm): https://git-scm.com/docs/git-commit
