@@ -53,7 +53,7 @@ bulletSlide("LocalStorage + GitHub", [
   "planner: объект «день → список блюд»",
   "GitHub: регулярные коммиты (1 задача = 1 коммит)",
   "README: описание, функции, технологии, запуск, автор",
-  "Ссылка на репозиторий: https://github.com/Rama7777kz/Recipe.web?tab=readme-ov-file",
+  "Ссылка на репозиторий: https://github.com/Rama7777kz/Recipe.web?tab=readme-ov-file  ",
 ]);
 
 pptx.writeFile({ fileName: "presentation/RecipeBox.pptx" });
