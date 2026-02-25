@@ -17,6 +17,21 @@ const daySelect = document.querySelector("#daySelect");
 
 let currentMeal = null;
 
+let ruMapCache = null;
+
+async function loadRuTranslations() {
+  if (ruMapCache) return ruMapCache;
+  try {
+    const res = await fetch("./data/ru_instructions.json");
+    if (!res.ok) return (ruMapCache = {});
+    ruMapCache = await res.json();
+  } catch {
+    ruMapCache = {};
+  }
+  return ruMapCache;
+}
+
+
 function buildDaysSelect() {
   daySelect.innerHTML = DAYS.map((d) => `<option value="${d.key}">${d.label}</option>`).join("");
 }
@@ -64,9 +79,11 @@ async function init() {
     }
     currentMeal = meal;
 
+    const ruMap = await loadRuTranslations();
+
     renderHeader(meal);
     renderIngredients(meal);
-    renderInstructions(meal);
+    renderInstructions(meal, ruMap);
 
     const openPlan = getQueryParam("plan") === "1";
     if (openPlan) openModal();
@@ -129,8 +146,11 @@ function renderIngredients(meal) {
     : `<li class="small">Список ингредиентов недоступен.</li>`;
 }
 
-function renderInstructions(meal) {
-  instructions.textContent = (meal.strInstructions || "").trim() || "Инструкция недоступна.";
+function renderInstructions(meal, ruMap) {
+  const id = String(meal.idMeal || "");
+  const ru = ruMap && ruMap[id];
+  const text = (ru || meal.strInstructions || "").trim();
+  instructions.textContent = text || "Инструкция недоступна.";
 }
 
 buildDaysSelect();
